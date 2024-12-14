@@ -18,9 +18,9 @@ export async function createUser(req,res){
     }
 }
 
-export async function getUser(req,res) {
+export async function loginUser(req,res) {
     try{
-        const users = await User.find({});
+        const users = await User.find({email : req.body.email});
         res.json(users)
     }
     catch(error){
@@ -28,4 +28,26 @@ export async function getUser(req,res) {
             error : message.error
         })
     }
+}
+
+
+export function isAdmin(req){
+     if(req.User==null){
+        return false
+     }
+    if(req.User.type !="Admin"){
+        return false
+    }
+    return true
+
+}
+
+export function isCustomer(req){
+    if(req.User == null){
+        return false
+    }
+    if(req.User.type != "User"){
+        return false
+    }
+    return true
 }

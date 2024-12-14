@@ -3,19 +3,19 @@ import mongoose from "mongoose";
 const productSchema =mongoose.Schema({
     ProductId :{
         type : String,
-        required :true,
+     //   required :true,
         unique : true
     },
     ProductName :{
         type : String,
-        required :true
+     //   required :true
     },
     altNames : [{
         type : String,
     }],
     price : {
         type : Number,
-        required : true,
+    //    required : true,
     },
     lastPrice : {
         type :Number,
