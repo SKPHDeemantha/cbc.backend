@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import productRouter from './Routes/ProductRouter.js';
 
 
 const app =express();
@@ -14,6 +15,9 @@ connection.once("open",
     ()=>{
         console.log("Database Connected");
     })
+
+app.use("/api/products",productRouter)
+
 
     app.listen(
         5000,
