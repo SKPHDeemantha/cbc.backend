@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import productRouter from './Routes/ProductRouter.js';
+import userRouter from './Routes/UserRouter.js';
 
 
 const app =express();
@@ -17,6 +18,7 @@ connection.once("open",
     })
 
 app.use("/api/products",productRouter)
+app.use("/api/users",userRouter)
 
 
     app.listen(
