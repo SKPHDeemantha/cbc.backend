@@ -25,7 +25,7 @@ export async function loginUser(req,res) {
     }
     catch(error){
         res.json({
-            error : message.error
+            error : error.message
         })
     }
 }
@@ -35,7 +35,7 @@ export function isAdmin(req){
      if(req.User==null){
         return false
      }
-    if(req.User.type !="Admin"){
+    if(req.User.type !="admin"){
         return false
     }
     return true
@@ -46,7 +46,7 @@ export function isCustomer(req){
     if(req.User == null){
         return false
     }
-    if(req.User.type != "User"){
+    if(req.User.type != "user"){
         return false
     }
     return true

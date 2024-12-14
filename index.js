@@ -17,6 +17,8 @@ connection.once("open",
         console.log("Database Connected");
     })
 
+app.use(bodyParser.json())
+
 app.use("/api/products",productRouter)
 app.use("/api/users",userRouter)
 

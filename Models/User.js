@@ -3,20 +3,20 @@ import mongoose from "mongoose";
 const userSchema =mongoose.Schema({
     email : {
         type : String,
-        required : true,
+      //  required : true,
         unique : true
     },
     firstName : {
         type : String,
-        required : true
+     //   required : true
     },
     lastName : {
         type : String,
-        required : true
+     //   required : true
     },
     password : {
         type : String,
-        required :true
+     //   required :true
     },
     isBlock : {
         type : Boolean,
@@ -35,3 +35,14 @@ const userSchema =mongoose.Schema({
 const User =mongoose.model("users",userSchema)
 
 export default User;
+
+
+// {
+//     "email": "admin@example.com",
+//     "firstName": "John",
+//     "lastName": "Doe",
+//     "password": "securePassword123",
+//     "isBlock": false,
+//     "type": "admin",
+//     "profilePicture": "https://www.example.com/images/admin-avatar.jpg"
+// }
